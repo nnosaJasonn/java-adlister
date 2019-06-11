@@ -24,9 +24,9 @@ private int hits =0;
             hits +=1;
         }
         String form = "<form method=\"POST\" target=\"/profile\" action=\"/profile\">\n" +
-                "        <label class=\"form-label\" for=\"username\">Username<input  type=\"text\" id=\"username\" name=\"username\" placeholder=\"Enter Username\" autofocus=\"autofocus\" required></label><br>\n" +
-                "        <label class=\"form-label\" for=\"password\">Password<input type=\"password\" placeholder=\"password\" id=\"password\" name=\"password\" required></label><br>\n" +
-                "    <label for=\"age\">Age<input type=\"text\" name=\"age\" id=\"age\" placeholder=\"Enter age\"></label><button type=\"submit\">Login</button></form>";
+                "        <label class=\"form-label\" for=\"username\">Username\t<input  type=\"text\" id=\"username\" name=\"username\" placeholder=\"Enter Username\" autofocus=\"autofocus\" required></label><br>\n" +
+                "        <label class=\"form-label\" for=\"password\">Password\t<input type=\"password\" placeholder=\"password\" id=\"password\" name=\"password\" required></label><br>\n" +
+                "    <label for=\"age\">Age\t<input type=\"text\" name=\"age\" id=\"age\" placeholder=\"Enter age\"></label>\n<button type=\"submit\">Login</button></form>";
         try {
             PrintWriter out = res.getWriter();
             if (name == null) {
