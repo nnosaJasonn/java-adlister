@@ -4,6 +4,8 @@
 <head>
     <title><%= "some title" %></title>
 </head>
+<%@include file="partials/nav.jsp"%>
+<%@include file="partials/header.jsp"%>
 <body>
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>
@@ -11,5 +13,6 @@
     <c:if test="false">
         <h1>single letter variable names are good</h1>
     </c:if>
+<%@include file="partials/footlinks.jsp"%>
 </body>
 </html>
