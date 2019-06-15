@@ -13,12 +13,20 @@
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">${ad.title}</h3>
+            </div>
+            <div class="panel-body">
+                ${ad.description}
+            </div>
         </div>
     </c:forEach>
+<a href="/ads/create">Click here to create a new ad</a>
 </div>
+
+
+
 
 </body>
 </html>

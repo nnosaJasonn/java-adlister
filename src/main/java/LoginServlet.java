@@ -18,10 +18,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        boolean validAttempt = username.equals("admin") && password.equals("password");
+        boolean validAttempt = DaoFactory.getLoginsDao().verify(username, password);
+
+        DaoFactory.getLoginsDao().setID(username, password);
+        long userID = DaoFactory.getLoginsDao().getId();
 
         if (validAttempt) {
             request.getSession().setAttribute("user", username);
+            request.getSession().setAttribute("userID", userID);
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");
