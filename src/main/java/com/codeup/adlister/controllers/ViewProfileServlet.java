@@ -1,5 +1,7 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.DaoFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,14 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+
+        request.setAttribute("ads", DaoFactory.getAdsDao().allFromUser(DaoFactory.getLoginsDao().getId()));
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        long title = Long.parseLong(request.getParameter("title"));
+        DaoFactory.getAdsDao().delete(title);
+        response.sendRedirect("/profile");
     }
 }
