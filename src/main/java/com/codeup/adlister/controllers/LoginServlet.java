@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         }
 
 
-        boolean validAttempt = Password.check(password, hash);
+        boolean validAttempt = Password.check(password, user.getPassword());
 //                password.equals(user.getPassword());
 
         if (validAttempt) {
